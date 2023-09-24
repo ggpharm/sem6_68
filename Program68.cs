@@ -11,12 +11,12 @@ int inpuNum(string message)
     return int.Parse(Console.ReadLine()!);
 }
 
-int AkkNum(int n, int m)
+int AkkNum(int m, int n)
 {   
-    if (n == 0) return m + 1;
-    if (m == 0) return AkkNum(n - 1, 1);
+    if (m == 0) return n + 1;
+    if (n == 0) return AkkNum(m - 1, 1);
     else
-    return AkkNum(n-1, AkkNum(n, m - 1));
+    return AkkNum(m-1, AkkNum(m, n - 1));
 }
 
 int numM = inpuNum("Введите M: ");
